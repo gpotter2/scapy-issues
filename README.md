@@ -34,22 +34,17 @@ be cross platform, and runs on many different platforms (Linux, OSX,
 Scapy is usable either as a **shell** or as a **library**.
 For further details, please head over to [Getting started with Scapy](https://scapy.readthedocs.io/en/latest/introduction.html), which is part of the documentation.
 
-### Shell demo
-
-![Scapy install demo](https://secdev.github.io/files/doc/animation-scapy-install.svg)
-
-Scapy can easily be used as an interactive shell to interact with the network.
 The following example shows how to send an ICMP Echo Request message to
 `github.com`, then display the reply source IP address:
 
 ```python
-sudo ./run_scapy
-Welcome to Scapy
->>> p = IP(dst="github.com")/ICMP()
+sudo scapy -H
+Welcome to Scapy (2.7.0)
+>>> p = IP(dst="github.com") / ICMP()
 >>> r = sr1(p)
-Begin emission:
-.Finished to send 1 packets.
-*
+Begin emission
+Finished to send 1 packets.
+
 Received 2 packets, got 1 answers, remaining 0 packets
 >>> r[IP].src
 '192.30.253.113'
@@ -89,6 +84,11 @@ Python modules, such as `matplotlib` or `cryptography`. See the
 follow the instructions to install them.
 
 <!-- stop_ppi_description -->
+
+## Packaging status
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/scapy.svg?columns=4&exclude_unsupported=1&header=
+)](https://repology.org/project/scapy/versions)
 
 ## License
 
